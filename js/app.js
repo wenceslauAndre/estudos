@@ -29,7 +29,8 @@
       var p = {};
       try { p = JSON.parse(localStorage.getItem(CHAVE_PREF)) || {}; } catch (e) { p = {}; }
       p.tema = tema;
-      localStorage.setItem(CHAVE_PREF, JSON.stringify(p));
+      if (E && typeof E.salvar === "function") E.salvar(CHAVE_PREF, p); // dispara estudos:salvo (sincroniza)
+      else localStorage.setItem(CHAVE_PREF, JSON.stringify(p));
     } catch (e) { /* armazenamento indisponível */ }
   }
 
