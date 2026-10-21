@@ -37,7 +37,7 @@
     }
   }
 
-  function salvar(chave, valor) {
+  function salvarSemEvento(chave, valor) {
     try {
       localStorage.setItem(chave, JSON.stringify(valor));
       return true;
@@ -47,12 +47,33 @@
     }
   }
 
+  /* Avisa (ex.: js/nuvem.js) que uma chave estudos.* mudou. */
+  function avisarSalvo(chave) {
+    try {
+      window.dispatchEvent(new CustomEvent("estudos:salvo", { detail: { chave: chave } }));
+    } catch (e) { /* navegador sem CustomEvent: ignora */ }
+  }
+
+  function salvar(chave, valor) {
+    var ok = salvarSemEvento(chave, valor);
+    if (ok) avisarSalvo(chave);
+    return ok;
+  }
+
+  function chavesLocais() {
+    var out = [];
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf(PREFIXO) === 0) out.push(k);
+      }
+    } catch (e) { /* armazenamento indisponível */ }
+    return out;
+  }
+
   function exportarTudo() {
     var dados = {};
-    for (var i = 0; i < localStorage.length; i++) {
-      var k = localStorage.key(i);
-      if (k && k.indexOf(PREFIXO) === 0) dados[k] = ler(k, null);
-    }
+    chavesLocais().forEach(function (k) { dados[k] = ler(k, null); });
     return { app: "estudos-univesp", versao: 1, exportadoEm: new Date().toISOString(), dados: dados };
   }
 
@@ -199,6 +220,8 @@
     MAX_ALTERNATIVAS: MAX_ALTERNATIVAS,
     ler: ler,
     salvar: salvar,
+    salvarSemEvento: salvarSemEvento,
+    chavesLocais: chavesLocais,
     exportarTudo: exportarTudo,
     importarTudo: importarTudo,
     materiaPorCodigo: materiaPorCodigo,
@@ -212,6 +235,6 @@
     salvarPlanos: salvarPlanos,
     marcarConteudoEstudado: marcarConteudoEstudado,
     parametrosFiltro: parametrosFiltro
-    /* importarConteudo(obj) é adicionado por js/importacao.js */
+    /* importarConteudo(obj) é adicionado por js/importacao.js; nuvem por js/nuvem.js */
   };
 })();
