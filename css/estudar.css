@@ -1,1 +1,127 @@
-/* estudar.css — ver CONTRATO.md (Worker E) */
+/* estudar.css — página Estudar (ver CONTRATO.md). Só variáveis do contrato e classes .est-* */
+#app-estudar { display: flex; flex-direction: column; gap: var(--espaco); min-width: 0; }
+#app-estudar > * { min-width: 0; }
+
+.est-titulo { margin: 0; font-size: 1.6rem; }
+.est-subtitulo { margin: 4px 0 0; color: var(--cor-texto-suave); }
+
+/* Seletor */
+.est-seletor { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--espaco) 24px; }
+.est-grupo { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.est-rotulo { font-size: .85rem; font-weight: 600; color: var(--cor-texto-suave); }
+.est-select { min-width: 190px; width: auto; max-width: 100%; }
+.est-materias { display: flex; flex-wrap: wrap; gap: 8px; }
+.est-materia {
+  --acento: var(--cor-destaque);
+  display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 6px 14px;
+  background: var(--cor-superficie-2); color: var(--cor-texto); cursor: pointer;
+  border: 2px solid var(--cor-borda); border-radius: 999px; font-size: .9rem;
+}
+.est-materia:hover { border-color: var(--acento); }
+.est-materia-ponto { width: 10px; height: 10px; border-radius: 50%; background: var(--acento); flex-shrink: 0; }
+.est-materia-codigo { font-weight: 700; }
+.est-materia-ativa { border-color: var(--acento); box-shadow: inset 0 0 0 1px var(--acento); }
+
+/* Visão geral */
+.est-visao-titulo { cursor: pointer; font-weight: 600; padding: 2px 0; }
+.est-grade {
+  display: grid; grid-template-columns: 44px repeat(3, minmax(0, 1fr)); gap: 6px;
+  align-items: stretch; margin-top: 12px;
+}
+.est-grade-cab { text-align: center; font-weight: 700; font-size: .85rem; align-self: end; overflow-wrap: anywhere; }
+.est-grade-semana { align-self: center; font-size: .8rem; color: var(--cor-texto-suave); font-weight: 600; }
+.est-celula {
+  --acento: var(--cor-destaque);
+  display: flex; flex-direction: column; justify-content: center; gap: 4px; min-width: 0; min-height: 44px;
+  padding: 6px 8px; text-align: left; cursor: pointer;
+  background: var(--cor-superficie-2); color: var(--cor-texto);
+  border: 1px solid var(--cor-borda); border-left: 3px solid var(--acento); border-radius: calc(var(--raio) - 2px);
+}
+.est-celula:hover { border-color: var(--acento); }
+.est-celula-ativa { border-color: var(--acento); box-shadow: 0 0 0 2px var(--acento); }
+.est-celula-texto { font-size: .8rem; font-weight: 600; }
+.est-celula-vazia { color: var(--cor-texto-suave); font-weight: 400; }
+.est-celula .est-barra { height: 5px; }
+
+/* Plano */
+.est-plano { --acento: var(--cor-destaque); border-top: 4px solid var(--acento); display: flex; flex-direction: column; gap: var(--espaco); }
+.est-plano-cab { display: flex; flex-direction: column; gap: 8px; }
+.est-plano-ident { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.est-pilula { display: inline-block; padding: 1px 10px; border: 1px solid var(--acento); border-radius: 999px; color: var(--acento); font-weight: 700; font-size: .85rem; }
+.est-plano-contexto { color: var(--cor-texto-suave); font-size: .9rem; overflow-wrap: anywhere; }
+.est-plano-titulo { margin: 0; font-size: 1.35rem; overflow-wrap: anywhere; }
+.est-sem-titulo { color: var(--cor-texto-suave); font-weight: 400; font-style: italic; }
+.est-acoes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.est-vazio { margin: 0; padding: var(--espaco); text-align: center; color: var(--cor-texto-suave); background: var(--cor-superficie-2); border: 1px dashed var(--cor-borda); border-radius: var(--raio); }
+.est-nota { margin: 0; font-size: .85rem; color: var(--cor-texto-suave); }
+
+.est-bloco { display: flex; flex-direction: column; gap: 10px; }
+.est-bloco-titulo { margin: 0; font-size: 1.05rem; }
+.est-progresso { display: flex; flex-direction: column; gap: 6px; max-width: 420px; }
+.est-progresso-texto { font-size: .9rem; color: var(--cor-texto-suave); }
+.est-topicos, .est-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.est-topico { background: var(--cor-superficie-2); border: 1px solid var(--cor-borda); border-radius: calc(var(--raio) - 2px); }
+.est-check { display: flex; align-items: flex-start; gap: 12px; min-height: 44px; padding: 10px 12px; cursor: pointer; }
+.est-check input { width: 20px; height: 20px; margin: 1px 0 0; flex-shrink: 0; accent-color: var(--acento); cursor: pointer; }
+.est-check-texto { overflow-wrap: anywhere; }
+.est-topico-feito .est-check-texto { color: var(--cor-texto-suave); text-decoration: line-through; }
+.est-link a { overflow-wrap: anywhere; }
+.est-atualizado { text-align: right; }
+
+/* Markdown renderizado */
+.est-md { min-width: 0; overflow-wrap: anywhere; }
+.est-md > :first-child { margin-top: 0; }
+.est-md > :last-child { margin-bottom: 0; }
+.est-md h1 { font-size: 1.4rem; margin: 1.2em 0 .5em; }
+.est-md h2 { font-size: 1.2rem; margin: 1.2em 0 .5em; }
+.est-md h3 { font-size: 1.05rem; margin: 1.2em 0 .5em; }
+.est-md p { margin: 0 0 .8em; }
+.est-md ul, .est-md ol { margin: 0 0 .8em; padding-left: 1.5em; }
+.est-md li { margin: .2em 0; }
+.est-md code {
+  padding: 1px 5px; background: var(--cor-superficie-2); border: 1px solid var(--cor-borda);
+  border-radius: 4px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em;
+}
+.est-md pre {
+  margin: 0 0 .8em; padding: 12px; max-width: 100%; overflow-x: auto;
+  background: var(--cor-superficie-2); border: 1px solid var(--cor-borda); border-radius: calc(var(--raio) - 2px);
+}
+.est-md pre code { padding: 0; background: none; border: 0; overflow-wrap: normal; white-space: pre; }
+
+/* Edição */
+.est-form { display: flex; flex-direction: column; gap: var(--espaco); }
+.est-campo { display: flex; flex-direction: column; gap: 6px; }
+.est-dica { margin: 0; font-size: .8rem; color: var(--cor-texto-suave); }
+.est-resumo-campo { min-height: 160px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9rem; }
+.est-previa { display: flex; flex-direction: column; gap: 8px; padding: 12px; background: var(--cor-fundo); border: 1px dashed var(--cor-borda); border-radius: var(--raio); }
+.est-fieldset { display: flex; flex-direction: column; gap: 8px; min-width: 0; margin: 0; padding: 12px; border: 1px solid var(--cor-borda); border-radius: var(--raio); }
+.est-fieldset legend { padding: 0 6px; }
+.est-lista-edicao { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.est-linha-edicao { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.est-linha-edicao .campo { flex: 1 1 auto; min-width: 0; }
+.est-remover { flex-shrink: 0; }
+.est-linha-link { padding: 8px 10px; background: var(--cor-superficie-2); border: 1px solid var(--cor-borda); border-radius: calc(var(--raio) - 2px); }
+.est-link-info { display: flex; flex-direction: column; flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
+.est-link-url { font-size: .8rem; color: var(--cor-texto-suave); }
+.est-novo-link { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) auto; gap: 8px; align-items: center; }
+.est-erro { margin: 0; font-size: .85rem; color: var(--cor-erro); }
+.est-campo .campo[aria-invalid="true"], .est-novo-link .campo[aria-invalid="true"] { border-color: var(--cor-erro); }
+
+.est-materia:focus-visible, .est-celula:focus-visible, .est-check input:focus-visible, .est-visao-titulo:focus-visible { outline: 3px solid var(--cor-destaque); outline-offset: 2px; }
+#est-titulo-plano:focus { outline: none; }
+#est-titulo-plano:focus-visible { outline: 2px solid var(--cor-destaque); outline-offset: 4px; }
+
+@media (max-width: 560px) {
+  .est-novo-link { grid-template-columns: 1fr; }
+  .est-novo-link .botao { justify-self: start; }
+}
+@media (max-width: 480px) {
+  .est-titulo { font-size: 1.35rem; }
+  .est-seletor { flex-direction: column; align-items: stretch; }
+  .est-select { width: 100%; }
+  .est-grade { grid-template-columns: 36px repeat(3, minmax(0, 1fr)); gap: 4px; }
+  .est-celula { padding: 5px 6px; }
+  .est-linha-edicao:not(.est-linha-link) { flex-wrap: wrap; }
+  .est-acoes .botao { flex: 1 1 auto; }
+}
+@media (prefers-reduced-motion: reduce) { .est-barra > span { transition: none; } }
