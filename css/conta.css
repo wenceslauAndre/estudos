@@ -1,0 +1,106 @@
+/* conta.css — área da conta, diálogos e avisos. Só variáveis de base.css. */
+
+/* Cabeçalho */
+.conta-area {
+  display: flex; align-items: center; gap: 8px; min-width: 0; order: 1;
+}
+.conta-area .botao { padding: 6px 10px; min-height: 34px; font-size: .82rem; white-space: nowrap; }
+.conta-email {
+  font-size: .82rem; color: var(--cor-texto-suave);
+  max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.conta-status {
+  display: inline-flex; align-items: center; gap: 6px; font-size: .78rem;
+  padding: 3px 9px; border-radius: 999px; background: var(--cor-superficie-2);
+  border: 1px solid var(--cor-borda); color: var(--cor-texto); white-space: nowrap; cursor: default;
+}
+.conta-ponto { width: 8px; height: 8px; border-radius: 50%; background: var(--cor-texto-suave); flex: none; }
+.conta-status-salvo .conta-ponto { background: var(--cor-sucesso); }
+.conta-status-salvando .conta-ponto { background: var(--cor-destaque); animation: conta-pulso 1s ease-in-out infinite; }
+.conta-status-offline .conta-ponto { background: var(--cor-aviso); }
+.conta-status-erro .conta-ponto { background: var(--cor-erro); }
+@keyframes conta-pulso { 50% { opacity: .3; } }
+@media (prefers-reduced-motion: reduce) { .conta-status-salvando .conta-ponto { animation: none; } }
+
+@media (max-width: 760px) {
+  /* na linha da marca: marca encolhe, conta fica à direita */
+  .cabecalho-marca { flex: 1 1 0; min-width: 0; }
+  .conta-area { order: 0; margin-left: auto; max-width: 100%; }
+  .conta-email { max-width: 110px; }
+}
+@media (max-width: 420px) {
+  .cabecalho-marca { font-size: .95rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .conta-email { max-width: 64px; }
+  .conta-area { gap: 6px; }
+  /* indicador compacto: só o ponto (o texto continua para leitores de tela) */
+  .conta-status { padding: 4px; }
+  .conta-status-texto {
+    position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+}
+
+/* Rodapé */
+.conta-link {
+  background: none; border: 0; padding: 0; font: inherit; color: var(--cor-destaque);
+  text-decoration: underline; cursor: pointer;
+}
+.conta-link:hover { filter: brightness(1.15); }
+
+/* Diálogo */
+.conta-dialogo {
+  padding: 0; border: 1px solid var(--cor-borda); border-radius: var(--raio);
+  background: var(--cor-superficie); color: var(--cor-texto);
+  width: 440px; max-width: calc(100vw - 24px); max-height: calc(100vh - 24px); overflow-y: auto;
+  box-shadow: 0 12px 40px rgba(0,0,0,.45);
+}
+.conta-dialogo::backdrop { background: rgba(0,0,0,.55); }
+.conta-dialogo-simples {
+  position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1100;
+  outline: 9999px solid rgba(0,0,0,.55);
+}
+.conta-dialogo-simples[hidden] { display: none; }
+.conta-dialogo-caixa { padding: var(--espaco); }
+.conta-dialogo-titulo { margin-bottom: 12px; }
+.conta-corpo { min-width: 0; }
+.conta-texto { color: var(--cor-texto-suave); font-size: .92rem; margin-bottom: 12px; }
+.conta-dica { color: var(--cor-texto-suave); font-size: .8rem; margin: 10px 0 0; }
+
+.conta-abas { display: flex; gap: 4px; margin-bottom: 14px; border-bottom: 1px solid var(--cor-borda); overflow-x: auto; }
+.conta-aba {
+  background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 10px; margin-bottom: -1px;
+  color: var(--cor-texto-suave); cursor: pointer; font-size: .9rem; white-space: nowrap;
+}
+.conta-aba:hover { color: var(--cor-texto); }
+.conta-aba-ativa { color: var(--cor-texto); border-bottom-color: var(--cor-destaque); font-weight: 600; }
+.conta-aba:focus-visible { outline: 2px solid var(--cor-destaque); outline-offset: -2px; }
+
+.conta-form { display: flex; flex-direction: column; gap: 12px; }
+.conta-rotulo { display: flex; flex-direction: column; gap: 4px; }
+.conta-rotulo-texto { font-size: .85rem; color: var(--cor-texto-suave); }
+.conta-mensagem { margin: 0; padding: 8px 10px; border-radius: var(--raio); font-size: .88rem; border: 1px solid var(--cor-borda); overflow-wrap: anywhere; }
+.conta-erro { border-color: var(--cor-erro); color: var(--cor-erro); }
+.conta-ok { border-color: var(--cor-sucesso); color: var(--cor-texto); }
+.conta-acoes { display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; }
+
+/* Primeiro login */
+.conta-resumo {
+  display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 0 0 14px; padding: 10px 12px;
+  background: var(--cor-superficie-2); border-radius: var(--raio); font-size: .88rem;
+}
+.conta-resumo dt { color: var(--cor-texto-suave); }
+.conta-resumo dd { margin: 0; overflow-wrap: anywhere; }
+.conta-opcoes { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+.conta-opcao { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left; width: 100%; padding: 10px 12px; }
+.conta-opcao-titulo { font-weight: 600; }
+.conta-opcao-desc { font-size: .82rem; font-weight: 400; white-space: normal; }
+
+/* Aviso "dados atualizados" */
+.conta-aviso {
+  position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 1000;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px 10px; justify-content: center;
+  width: max-content; max-width: calc(100vw - 24px); padding: 10px 14px;
+  background: var(--cor-superficie-2); color: var(--cor-texto);
+  border: 1px solid var(--cor-borda); border-left: 4px solid var(--cor-destaque);
+  border-radius: var(--raio); box-shadow: 0 6px 24px rgba(0,0,0,.35); font-size: .9rem;
+}
+.conta-aviso .botao { padding: 5px 10px; min-height: 32px; font-size: .84rem; }
