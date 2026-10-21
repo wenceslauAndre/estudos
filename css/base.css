@@ -1,0 +1,29 @@
+/* base.css — Worker C. As variáveis abaixo são CONTRATO: podem mudar de valor, não de nome. */
+:root, [data-tema="escuro"] {
+  --cor-fundo: #0f1115;
+  --cor-superficie: #181b22;
+  --cor-superficie-2: #222632;
+  --cor-borda: #2e3341;
+  --cor-texto: #e6e8ee;
+  --cor-texto-suave: #9aa3b5;
+  --cor-destaque: #7c8cff;
+  --cor-sucesso: #3ecf8e;
+  --cor-erro: #f2555a;
+  --cor-aviso: #f5a524;
+  --raio: 10px;
+  --espaco: 16px;
+  --fonte: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+[data-tema="claro"] {
+  --cor-fundo: #f6f7fb;
+  --cor-superficie: #ffffff;
+  --cor-superficie-2: #eef0f6;
+  --cor-borda: #d9dce6;
+  --cor-texto: #1b1e27;
+  --cor-texto-suave: #5b6275;
+  --cor-destaque: #4a5bdc;
+  --cor-sucesso: #1a9e63;
+  --cor-erro: #d23a3f;
+  --cor-aviso: #b97a0c;
+}
+body { margin: 0; background: var(--cor-fundo); color: var(--cor-texto); font-family: var(--fonte); }
