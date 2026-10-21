@@ -1,0 +1,316 @@
+{
+  "formato": "estudos-univesp-conteudo",
+  "versao": 1,
+  "planos": [
+    {
+      "semana": 1,
+      "materia": "PES300",
+      "titulo": "Estatística descritiva: tipos de variáveis e medidas de posição",
+      "resumo": "## Visão geral\nA **estatística descritiva** organiza, resume e apresenta dados por meio de tabelas, gráficos e medidas-resumo.\n\n## Tipos de variáveis\n- **Qualitativa nominal**: categorias sem ordem (cor dos olhos, curso).\n- **Qualitativa ordinal**: categorias com ordem natural (escolaridade).\n- **Quantitativa discreta**: contagens (número de filhos).\n- **Quantitativa contínua**: medições em um intervalo (altura, peso).\n\n## Medidas de posição\n1. **Média aritmética**: soma dos valores dividida pela quantidade (x̄ = Σxᵢ / n).\n2. **Mediana**: valor central dos dados ordenados.\n3. **Moda**: valor que mais se repete.\n\n### Dica\nA média é sensível a valores extremos; a mediana não. Em dados assimétricos, prefira a mediana.",
+      "topicos": [
+        "Diferenciar variáveis qualitativas (nominal e ordinal) de quantitativas (discreta e contínua)",
+        "Montar uma tabela de frequências (absoluta, relativa e acumulada)",
+        "Calcular média, mediana e moda de um conjunto de dados",
+        "Interpretar histogramas e gráficos de barras"
+      ],
+      "links": [
+        {
+          "titulo": "Estatística descritiva (Wikipédia)",
+          "url": "https://pt.wikipedia.org/wiki/Estat%C3%ADstica_descritiva"
+        },
+        {
+          "titulo": "Estatística (Wikipédia)",
+          "url": "https://pt.wikipedia.org/wiki/Estat%C3%ADstica"
+        }
+      ]
+    },
+    {
+      "semana": 2,
+      "materia": "PES300",
+      "titulo": "Medidas de dispersão: variância, desvio padrão e coeficiente de variação",
+      "resumo": "## Por que medir a dispersão?\nDois conjuntos podem ter a **mesma média** e comportamentos muito diferentes. As medidas de dispersão mostram o quanto os dados se espalham em torno do centro.\n\n## Principais medidas\n- **Amplitude**: maior valor − menor valor.\n- **Variância populacional**: σ² = Σ(xᵢ − μ)² / N (média dos quadrados dos desvios).\n- **Variância amostral**: s² = Σ(xᵢ − x̄)² / (n − 1).\n- **Desvio padrão**: raiz quadrada da variância, na mesma unidade dos dados.\n- **Coeficiente de variação**: CV = desvio padrão / média, em porcentagem.\n\n### Quartis e boxplot\nOs quartis (Q1, Q2 = mediana, Q3) dividem os dados ordenados em quatro partes. O *boxplot* resume mínimo, Q1, mediana, Q3 e máximo.",
+      "topicos": [
+        "Calcular amplitude, variância e desvio padrão",
+        "Diferenciar variância populacional (divide por N) de amostral (divide por n − 1)",
+        "Usar o coeficiente de variação para comparar dispersões relativas",
+        "Ler quartis e boxplots, identificando possíveis outliers"
+      ],
+      "links": [
+        {
+          "titulo": "Desvio padrão (Wikipédia)",
+          "url": "https://pt.wikipedia.org/wiki/Desvio_padr%C3%A3o"
+        }
+      ]
+    },
+    {
+      "semana": 1,
+      "materia": "ADM200",
+      "titulo": "Conceitos de inovação e tipos de inovação",
+      "resumo": "## Invenção × inovação\n**Invenção** é uma ideia ou criação nova. **Inovação** é a introdução efetiva de algo novo ou significativamente melhorado no mercado ou na organização, gerando valor.\n\n## Tipos de inovação (Manual de Oslo, 3ª edição)\n1. **Produto**: novos bens ou serviços, ou melhorias significativas.\n2. **Processo**: novos métodos de produção ou entrega.\n3. **Marketing**: novas práticas de design, preço, promoção ou distribuição.\n4. **Organizacional**: novos métodos de organização do trabalho e das relações externas.\n\n## Grau de novidade\n- **Incremental**: pequenas melhorias contínuas.\n- **Radical**: ruptura com o que existia.\n- **Disruptiva**: começa em nichos simples e baratos e acaba substituindo as soluções dominantes (conceito de Clayton Christensen).",
+      "topicos": [
+        "Diferenciar invenção de inovação",
+        "Citar os quatro tipos de inovação do Manual de Oslo (3ª edição)",
+        "Distinguir inovação incremental, radical e disruptiva",
+        "Identificar fontes de inovação (P&D, clientes, fornecedores, concorrentes)"
+      ],
+      "links": [
+        {
+          "titulo": "Inovação (Wikipédia)",
+          "url": "https://pt.wikipedia.org/wiki/Inova%C3%A7%C3%A3o"
+        },
+        {
+          "titulo": "Manual de Oslo (Wikipédia)",
+          "url": "https://pt.wikipedia.org/wiki/Manual_de_Oslo"
+        }
+      ]
+    },
+    {
+      "semana": 2,
+      "materia": "ADM200",
+      "titulo": "Processo de desenvolvimento de produtos (PDP)",
+      "resumo": "## O que é o PDP\nO **processo de desenvolvimento de produtos** transforma oportunidades de mercado e possibilidades tecnológicas em um produto pronto para ser produzido e vendido.\n\n## Macrofases (Rozenfeld et al.)\n1. **Pré-desenvolvimento**: planejamento estratégico e planejamento do projeto.\n2. **Desenvolvimento**: projeto informacional, conceitual, detalhado, preparação da produção e lançamento.\n3. **Pós-desenvolvimento**: acompanhamento do produto e descontinuação.\n\n## Modelo Stage-Gate (Cooper)\nO projeto passa por **etapas** (descoberta, escopo, business case, desenvolvimento, testes e validação, lançamento), separadas por **gates**: pontos de decisão em que se escolhe entre *go*, *kill*, *hold* ou *recycle*.\n\n### Ideia central\nDecidir cedo e com critérios claros reduz o custo de errar.",
+      "topicos": [
+        "Descrever as três macrofases do PDP",
+        "Explicar o funcionamento do Stage-Gate e o papel dos gates",
+        "Relacionar o PDP com a estratégia da empresa",
+        "Citar critérios usados para decidir se um projeto continua"
+      ],
+      "links": [
+        {
+          "titulo": "Desenvolvimento de novos produtos (Wikipédia)",
+          "url": "https://pt.wikipedia.org/wiki/Desenvolvimento_de_novos_produtos"
+        }
+      ]
+    },
+    {
+      "semana": 1,
+      "materia": "COM230",
+      "titulo": "Classes, objetos e encapsulamento",
+      "resumo": "## Conceitos básicos\nNa **programação orientada a objetos (POO)**, o programa é organizado como objetos que combinam **dados (atributos)** e **comportamentos (métodos)**.\n\n- **Classe**: molde que define atributos e métodos.\n- **Objeto**: instância concreta de uma classe, criada com `new`.\n- **Construtor**: método especial que inicializa o objeto na criação.\n\n## Encapsulamento\nAtributos ficam `private` e são acessados por métodos públicos (*getters* e *setters*), protegendo o estado do objeto.\n\n### Exemplo em Java\n```java\npublic class Pessoa {\n    private String nome;\n\n    public Pessoa(String nome) {\n        this.nome = nome;\n    }\n\n    public String getNome() {\n        return nome;\n    }\n}\n\nPessoa p = new Pessoa(\"Ana\");\nSystem.out.println(p.getNome());\n```",
+      "topicos": [
+        "Diferenciar classe de objeto",
+        "Escrever uma classe com atributos privados, construtor e getters",
+        "Explicar o papel do encapsulamento",
+        "Instanciar objetos com new e chamar seus métodos"
+      ],
+      "links": [
+        {
+          "titulo": "Java Tutorials: o que é uma classe?",
+          "url": "https://docs.oracle.com/javase/tutorial/java/concepts/class.html"
+        },
+        {
+          "titulo": "Classe (programação) (Wikipédia)",
+          "url": "https://pt.wikipedia.org/wiki/Classe_(programa%C3%A7%C3%A3o)"
+        }
+      ]
+    },
+    {
+      "semana": 2,
+      "materia": "COM230",
+      "titulo": "Herança e polimorfismo",
+      "resumo": "## Herança\nUma **subclasse** herda atributos e métodos de uma **superclasse**, reaproveitando código. Em Java, usa-se `extends`; cada classe estende no máximo uma superclasse.\n\n## Polimorfismo\nObjetos de classes diferentes respondem à **mesma chamada de método** de formas distintas. Uma subclasse pode **sobrescrever** (`@Override`) um método herdado.\n\n### Exemplo em Java\n```java\nclass Animal {\n    public String emitirSom() {\n        return \"...\";\n    }\n}\n\nclass Cachorro extends Animal {\n    @Override\n    public String emitirSom() {\n        return \"Au au\";\n    }\n}\n\nAnimal a = new Cachorro();\nSystem.out.println(a.emitirSom()); // Au au\n```\n\nA variável é do tipo `Animal`, mas o método executado é o de `Cachorro`.",
+      "topicos": [
+        "Aplicar herança com extends",
+        "Sobrescrever métodos com @Override",
+        "Explicar polimorfismo com um exemplo",
+        "Usar super para chamar o construtor ou método da superclasse"
+      ],
+      "links": [
+        {
+          "titulo": "Java Tutorials: herança",
+          "url": "https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html"
+        }
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "semana": 1,
+      "materia": "PES300",
+      "frente": "Qual medida de posição é menos sensível a valores extremos (outliers): a média ou a mediana?",
+      "verso": "A mediana.",
+      "alternativas": [
+        {
+          "texto": "A mediana",
+          "correta": true
+        },
+        {
+          "texto": "A média aritmética",
+          "correta": false
+        },
+        {
+          "texto": "A amplitude total",
+          "correta": false
+        },
+        {
+          "texto": "O desvio padrão",
+          "correta": false
+        }
+      ],
+      "explicacao": "A mediana depende apenas da posição central dos dados ordenados; a média usa todos os valores e é puxada pelos extremos."
+    },
+    {
+      "semana": 1,
+      "materia": "PES300",
+      "frente": "A variável \"grau de escolaridade\" (fundamental, médio, superior) é de que tipo?",
+      "verso": "Qualitativa ordinal.",
+      "explicacao": "São categorias com ordem natural, mas sem distância numérica entre elas."
+    },
+    {
+      "semana": 2,
+      "materia": "PES300",
+      "frente": "Como se calcula o coeficiente de variação (CV)?",
+      "verso": "CV = desvio padrão ÷ média (em porcentagem).",
+      "explicacao": "É uma medida de dispersão relativa, útil para comparar a variabilidade de conjuntos com unidades ou médias diferentes."
+    },
+    {
+      "semana": 2,
+      "materia": "PES300",
+      "frente": "Para os dados 2, 4, 4, 4, 5, 5, 7, 9, qual é a variância populacional?",
+      "verso": "4 (o desvio padrão populacional é 2).",
+      "alternativas": [
+        {
+          "texto": "4",
+          "correta": true
+        },
+        {
+          "texto": "32",
+          "correta": false
+        },
+        {
+          "texto": "5",
+          "correta": false
+        },
+        {
+          "texto": "2",
+          "correta": false
+        }
+      ],
+      "explicacao": "A média é 5; a soma dos quadrados dos desvios é 32; dividindo por N = 8, obtém-se 4."
+    },
+    {
+      "semana": 1,
+      "materia": "ADM200",
+      "frente": "Qual é a diferença entre invenção e inovação?",
+      "verso": "Invenção é uma ideia ou criação nova; inovação é a introdução efetiva de algo novo ou melhorado no mercado ou na organização, gerando valor."
+    },
+    {
+      "semana": 1,
+      "materia": "ADM200",
+      "frente": "Quais são os quatro tipos de inovação do Manual de Oslo (3ª edição)?",
+      "verso": "Produto, processo, marketing e organizacional.",
+      "alternativas": [
+        {
+          "texto": "Produto, processo, marketing e organizacional",
+          "correta": true
+        },
+        {
+          "texto": "Produto, preço, praça e promoção",
+          "correta": false
+        },
+        {
+          "texto": "Incremental, radical, disruptiva e aberta",
+          "correta": false
+        },
+        {
+          "texto": "Tecnológica, financeira, jurídica e contábil",
+          "correta": false
+        }
+      ],
+      "explicacao": "A 4ª edição (2018) simplificou a classificação em inovações de produto e de processos de negócios."
+    },
+    {
+      "semana": 2,
+      "materia": "ADM200",
+      "frente": "O que é um \"gate\" no modelo Stage-Gate?",
+      "verso": "Um ponto de decisão entre etapas, em que se avalia o projeto e se decide seguir (go), encerrar (kill), manter em espera (hold) ou refazer (recycle).",
+      "explicacao": "Os gates impõem critérios claros e evitam gastar recursos em projetos pouco promissores."
+    },
+    {
+      "semana": 2,
+      "materia": "ADM200",
+      "frente": "Segundo Rozenfeld et al., quais são as três macrofases do PDP?",
+      "verso": "Pré-desenvolvimento, desenvolvimento e pós-desenvolvimento.",
+      "alternativas": [
+        {
+          "texto": "Pré-desenvolvimento, desenvolvimento e pós-desenvolvimento",
+          "correta": true
+        },
+        {
+          "texto": "Planejamento, execução e encerramento",
+          "correta": false
+        },
+        {
+          "texto": "Concepção, produção e descarte",
+          "correta": false
+        },
+        {
+          "texto": "Ideação, prototipagem e vendas",
+          "correta": false
+        }
+      ]
+    },
+    {
+      "semana": 1,
+      "materia": "COM230",
+      "frente": "Qual é a diferença entre classe e objeto?",
+      "verso": "Classe é o molde que define atributos e métodos; objeto é uma instância concreta criada a partir da classe."
+    },
+    {
+      "semana": 1,
+      "materia": "COM230",
+      "frente": "Em Java, qual é a função de um construtor?",
+      "verso": "Inicializar o objeto no momento em que ele é criado com new.",
+      "alternativas": [
+        {
+          "texto": "Inicializar o objeto no momento em que ele é criado com new",
+          "correta": true
+        },
+        {
+          "texto": "Destruir o objeto e liberar a memória",
+          "correta": false
+        },
+        {
+          "texto": "Herdar métodos de outra classe",
+          "correta": false
+        },
+        {
+          "texto": "Declarar uma constante da classe",
+          "correta": false
+        }
+      ],
+      "explicacao": "O construtor tem o mesmo nome da classe e não declara tipo de retorno."
+    },
+    {
+      "semana": 2,
+      "materia": "COM230",
+      "frente": "Para que serve a palavra-chave extends em Java?",
+      "verso": "Declara que uma classe herda de outra (a superclasse), reaproveitando seus atributos e métodos.",
+      "explicacao": "Java permite herança simples de classes: cada classe estende no máximo uma superclasse."
+    },
+    {
+      "semana": 2,
+      "materia": "COM230",
+      "frente": "O que é polimorfismo na programação orientada a objetos?",
+      "verso": "É a capacidade de objetos de classes diferentes responderem à mesma chamada de método de formas distintas.",
+      "alternativas": [
+        {
+          "texto": "Capacidade de objetos de classes diferentes responderem à mesma chamada de método de formas distintas",
+          "correta": true
+        },
+        {
+          "texto": "Esconder atributos usando private",
+          "correta": false
+        },
+        {
+          "texto": "Criar uma classe a partir de outra reaproveitando código",
+          "correta": false
+        },
+        {
+          "texto": "Criar vários objetos a partir da mesma classe",
+          "correta": false
+        }
+      ]
+    }
+  ]
+}
