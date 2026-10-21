@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="escuro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Organizador de estudos da faculdade (BTI Univesp)">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%237c8cff%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-size=%2720%27 text-anchor=%27middle%27 font-family=%27sans-serif%27 font-weight=%27700%27 fill=%27%230f1115%27%3EE%3C/text%3E%3C/svg%3E">
+  <script>try{var p=JSON.parse(localStorage.getItem("estudos.preferencias.v1"));if(p&&p.tema==="claro")document.documentElement.setAttribute("data-tema","claro")}catch(e){}</script>
+  <title>Estudar · Estudos Univesp</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/estudar.css">
+</head>
+<body data-pagina="estudar">
+  <!-- INÍCIO CABEÇALHO (Worker C) -->
+  <header class="cabecalho" id="cabecalho">
+    <div class="cabecalho-interno">
+      <a class="cabecalho-marca" href="index.html">Estudos BTI · Univesp</a>
+      <nav class="navegacao" aria-label="Principal">
+        <a href="index.html" data-pagina="planner">Planner</a>
+        <a href="estudar.html" data-pagina="estudar" aria-current="page">Estudar</a>
+        <a href="flashcards.html" data-pagina="flashcards">Flashcards</a>
+      </nav>
+      <div class="cabecalho-acoes">
+        <button type="button" class="botao" id="btn-tema" aria-pressed="false">☀️ Tema claro</button>
+        <button type="button" class="botao" id="btn-exportar">Exportar backup</button>
+        <button type="button" class="botao" id="btn-importar">Importar backup</button>
+        <button type="button" class="botao" id="btn-importar-conteudo">Importar conteúdo</button>
+        <input type="file" id="arquivo-conteudo" accept="application/json,.json" class="oculto">
+        <input type="file" id="arquivo-importar" accept="application/json,.json" class="oculto">
+      </div>
+    </div>
+  </header>
+  <!-- FIM CABEÇALHO -->
+
+  <main class="conteudo" id="app-estudar"></main>
+
+  <!-- INÍCIO RODAPÉ (Worker C) -->
+  <footer class="rodape" id="rodape">Dados salvos apenas neste navegador. Faça backup com “Exportar backup”.</footer>
+  <!-- FIM RODAPÉ -->
+
+  <script src="js/comum.js"></script>
+  <script src="js/importacao.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/estudar.js"></script>
+</body>
+</html>

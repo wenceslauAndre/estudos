@@ -18,12 +18,15 @@
       <a class="cabecalho-marca" href="index.html">Estudos BTI · Univesp</a>
       <nav class="navegacao" aria-label="Principal">
         <a href="index.html" data-pagina="planner" aria-current="page">Planner</a>
+        <a href="estudar.html" data-pagina="estudar">Estudar</a>
         <a href="flashcards.html" data-pagina="flashcards">Flashcards</a>
       </nav>
       <div class="cabecalho-acoes">
         <button type="button" class="botao" id="btn-tema" aria-pressed="false">☀️ Tema claro</button>
         <button type="button" class="botao" id="btn-exportar">Exportar backup</button>
         <button type="button" class="botao" id="btn-importar">Importar backup</button>
+        <button type="button" class="botao" id="btn-importar-conteudo">Importar conteúdo</button>
+        <input type="file" id="arquivo-conteudo" accept="application/json,.json" class="oculto">
         <input type="file" id="arquivo-importar" accept="application/json,.json" class="oculto">
       </div>
     </div>
@@ -37,6 +40,7 @@
   <!-- FIM RODAPÉ -->
 
   <script src="js/comum.js"></script>
+  <script src="js/importacao.js"></script>
   <script src="js/app.js"></script>
   <script src="js/planner.js"></script>
 </body>
