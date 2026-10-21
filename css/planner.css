@@ -1,1 +1,51 @@
 /* planner.css — ver CONTRATO.md */
+#app-planner { display: flex; flex-direction: column; gap: var(--espaco); }
+.planner-titulo { margin: 0; font-size: 1.6rem; }
+.planner-subtitulo { margin: 0 0 var(--espaco); font-size: 1.15rem; }
+
+.planner-progresso, .planner-resumo { padding: var(--espaco); background: var(--cor-superficie); border: 1px solid var(--cor-borda); border-radius: var(--raio); }
+
+.planner-indicador { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.planner-indicador-topo { display: flex; justify-content: space-between; gap: 8px; font-size: .9rem; }
+.planner-indicador-nome { overflow-wrap: anywhere; text-align: left; }
+.planner-indicador-pct { font-weight: 700; flex-shrink: 0; }
+.planner-indicador-geral .planner-indicador-nome { font-weight: 700; font-size: 1rem; }
+.planner-barra { display: block; height: 10px; background: var(--cor-superficie-2); border: 1px solid var(--cor-borda); border-radius: 999px; overflow: hidden; }
+.planner-barra > span { display: block; height: 100%; width: 0; background: var(--cor-destaque); border-radius: 999px; transition: width .25s ease; }
+
+.planner-materias-progresso { display: grid; gap: var(--espaco); grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: var(--espaco); }
+
+.planner-resumo-grade { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.planner-resumo-item { font: inherit; color: var(--cor-texto); text-align: left; cursor: pointer; padding: 10px; background: var(--cor-superficie-2); border: 1px solid var(--cor-borda); border-radius: var(--raio); }
+.planner-resumo-item:hover { border-color: var(--cor-destaque); }
+
+.planner-abas { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; }
+.planner-aba { font: inherit; color: var(--cor-texto); display: flex; flex-direction: column; align-items: center; min-width: 64px; padding: 8px 10px; cursor: pointer; white-space: nowrap; background: var(--cor-superficie); border: 1px solid var(--cor-borda); border-radius: var(--raio); }
+.planner-aba-pct { font-size: .75rem; color: var(--cor-texto-suave); }
+.planner-aba:hover { border-color: var(--cor-destaque); }
+.planner-aba-ativa { background: var(--cor-destaque); border-color: var(--cor-destaque); font-weight: 700; }
+.planner-aba-ativa .planner-aba-pct { color: inherit; }
+
+.planner-painel-cab { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--espaco); margin-bottom: var(--espaco); }
+.planner-painel-cab .planner-subtitulo { margin: 0; }
+.planner-indicador-semana { flex: 1 1 200px; max-width: 360px; }
+
+.planner-cartoes { display: grid; gap: var(--espaco); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.planner-cartao { --acento: var(--cor-destaque); display: flex; flex-direction: column; gap: 10px; min-width: 0; padding: var(--espaco); background: var(--cor-superficie); border: 1px solid var(--cor-borda); border-top: 4px solid var(--acento); border-radius: var(--raio); }
+.planner-cartao-titulo { margin: 0; font-size: 1rem; overflow-wrap: anywhere; }
+.planner-codigo { display: inline-block; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--acento); color: var(--acento); font-weight: 700; font-size: .85rem; }
+.planner-indicador-nome { --acento: inherit; }
+
+.planner-check { display: flex; align-items: center; gap: 10px; min-height: 36px; cursor: pointer; }
+.planner-check input { width: 20px; height: 20px; margin: 0; accent-color: var(--acento); cursor: pointer; flex-shrink: 0; }
+.planner-nota-rotulo { font-size: .9rem; color: var(--cor-texto-suave); }
+.planner-nota { width: 100%; box-sizing: border-box; min-height: 90px; resize: vertical; font: inherit; color: var(--cor-texto); background: var(--cor-superficie-2); border: 1px solid var(--cor-borda); border-radius: var(--raio); padding: 8px; }
+
+.planner-aba:focus-visible, .planner-resumo-item:focus-visible, .planner-check input:focus-visible, .planner-nota:focus-visible { outline: 3px solid var(--cor-destaque); outline-offset: 2px; }
+
+@media (max-width: 480px) {
+  .planner-titulo { font-size: 1.35rem; }
+  .planner-cartoes, .planner-materias-progresso { grid-template-columns: 1fr; }
+  .planner-resumo-grade { grid-template-columns: repeat(2, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { .planner-barra > span { transition: none; } }
