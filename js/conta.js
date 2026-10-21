@@ -460,7 +460,21 @@
   }
 
   var avisoAtualizada = null;
+  function editandoAlgo() {
+    var a = document.activeElement;
+    if (!a || a === document.body) return false;
+    var tag = (a.tagName || "").toLowerCase();
+    return tag === "textarea" || tag === "select" || a.isContentEditable ||
+      (tag === "input" && !/^(button|submit|reset|checkbox|radio|file)$/i.test(a.type || ""));
+  }
+
   function mostrarAtualizada() {
+    // As páginas guardam os dados em memória: se ninguém está digitando, recarrega já,
+    // para a próxima edição não regravar a versão antiga por cima da nuvem.
+    if (!editandoAlgo() && !document.querySelector("dialog[open]")) {
+      window.location.reload();
+      return;
+    }
     if (avisoAtualizada && document.contains(avisoAtualizada)) return;
     var a = el("div", "conta-aviso");
     a.setAttribute("role", "status");

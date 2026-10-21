@@ -185,7 +185,8 @@ Limite de tamanho: `valor` até ~1 MB (`check (pg_column_size(valor) < 1048576)`
 5. **Sem internet / erro de rede**: status `"offline"`, mantém `pendente`; tenta de novo no evento `online`,
    ao voltar o foco para a aba e a cada 30 s enquanto houver pendências.
 6. **Ao voltar o foco da aba** (no máx. 1 vez a cada 30 s): baixa de novo; se algo mudou e foi aplicado,
-   dispara o evento `estudos:nuvem-atualizada` (o `conta.js` mostra "Dados atualizados de outro aparelho — Recarregar").
+   dispara o evento `estudos:nuvem-atualizada`. O `conta.js` recarrega a página na hora se ninguém estiver
+   digitando (as páginas guardam os dados em memória); senão mostra "Dados atualizados de outro aparelho — Recarregar".
 
 ### Conciliação ao baixar (por chave)
 | situação | resultado |
@@ -212,6 +213,8 @@ Nada se perde por padrão: na dúvida, junta.
   diferentes → `local + "\n\n— (outro aparelho) —\n" + nuvem`.
 - **`estudos.flashcards.v1`**: `cartoes` = união por `id`; mesmo `id` nos dois → fica a versão com
   maior `acertos + erros` (empate: a com `ultimaRevisao` mais recente; empate: local).
+  Depois, cartões de `id` diferente com a mesma matéria + semana + `frente` (sem maiúsc./espaços) viram um só,
+  pela mesma regra (evita duplicar os cartões de exemplo ou um conteúdo importado nos dois aparelhos).
   `historicoQuiz` = união sem duplicatas (mesmo `data` + `materia` + `semana` + `modo`), ordenado por `data`.
 - **`estudos.planos.v1`**: por semana×matéria, base = plano com `atualizadoEm` mais recente (empate: local);
   `topicos` = união por `id` (mesmo id: `feito` = OU, texto da base); `links` = união por `url`;

@@ -209,7 +209,20 @@
     }
     lista(l.cartoes).forEach(adicionar);
     lista(n.cartoes).forEach(adicionar);
-    out.cartoes = cartoes;
+
+    // Mesmo conteúdo com ids diferentes (cartões de exemplo criados em cada aparelho,
+    // ou o mesmo arquivo importado nos dois): fica um só, pela mesma regra do mesmo id.
+    // Chave = matéria + semana + frente sem maiúsculas/espaços (igual à importação).
+    var porConteudo = {};
+    var unicos = [];
+    cartoes.forEach(function (c) {
+      var frente = textoDe(c.frente).replace(/\s+/g, " ").trim().toLowerCase();
+      if (!frente) { unicos.push(c); return; }
+      var k = JSON.stringify([textoDe(c.materia), textoDe(c.semana), frente]);
+      if (temPropria(porConteudo, k)) unicos[porConteudo[k]] = escolherCartao(unicos[porConteudo[k]], c);
+      else { porConteudo[k] = unicos.length; unicos.push(c); }
+    });
+    out.cartoes = unicos;
 
     var vistos = {};
     var hist = [];

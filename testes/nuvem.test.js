@@ -95,6 +95,13 @@ teste("flashcards: cartões = união por id (ordem: locais, depois só-da-nuvem)
   assert.deepStrictEqual(ids(r), ["a", "b", "c"]);
 });
 
+teste("flashcards: ids diferentes com mesma matéria+semana+frente viram um só (ex.: cartões de exemplo)", function () {
+  var r = N.mesclar(FC, fc([cartao("x1", 0, 0, null, "O que é média?"), cartao("b", 0, 0)]),
+                        fc([cartao("y1", 3, 1, null, "  o que É   média? "), cartao("c", 0, 0)]));
+  assert.strictEqual(r.cartoes.length, 3);
+  assert.strictEqual(r.cartoes[0].id, "y1"); // o mais estudado vence, na posição do primeiro
+});
+
 teste("flashcards: mesmo id → maior acertos+erros vence (dos dois lados)", function () {
   var r = N.mesclar(FC, fc([cartao("a", 1, 1, null, "local")]), fc([cartao("a", 2, 1, null, "nuvem")]));
   assert.strictEqual(r.cartoes[0].frente, "nuvem");
