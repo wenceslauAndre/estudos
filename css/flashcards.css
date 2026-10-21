@@ -1,4 +1,4 @@
-/* flashcards.css — Worker B. Ver CONTRATO.md. Só usa variáveis do contrato
+/* flashcards.css — Workers B e D. Ver CONTRATO.md. Só usa variáveis do contrato
    (e --fc-cor-materia, preenchida via JS com MATERIAS[i].cor). */
 
 .fc-app {
@@ -143,6 +143,62 @@
 .fc-historico-filtro { flex: 1 1 160px; }
 .fc-historico-nota { font-variant-numeric: tabular-nums; }
 
+/* ---------- Múltipla escolha ---------- */
+.fc-mc-opcoes { display: flex; flex-direction: column; gap: 8px; }
+.fc-mc-opcao {
+  width: 100%; justify-content: flex-start; align-items: flex-start; text-align: left;
+  gap: 10px; padding: 10px 12px; font-size: 1rem; line-height: 1.4;
+  white-space: normal; overflow-wrap: anywhere;
+}
+.fc-mc-numero {
+  flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
+  min-width: 1.6em; height: 1.6em; border-radius: 999px;
+  border: 1px solid var(--cor-borda); background: var(--cor-superficie);
+  font-size: 0.8rem; font-weight: 700; color: var(--cor-texto-suave);
+}
+.fc-mc-texto { flex: 1 1 auto; min-width: 0; }
+.fc-mc-marca { flex: 0 0 auto; font-size: 0.8rem; font-weight: 700; white-space: nowrap; }
+.fc-mc-marca:empty { display: none; }
+/* Depois de responder: botões travados, mas legíveis */
+.fc-mc-opcao:disabled { opacity: 1; cursor: default; }
+.fc-mc-opcao:disabled:hover { border-color: var(--cor-borda); }
+.fc-mc-neutra { opacity: 0.7 !important; }
+.fc-mc-correta, .fc-mc-correta:disabled:hover {
+  border-color: var(--cor-sucesso); box-shadow: inset 4px 0 0 var(--cor-sucesso);
+}
+.fc-mc-correta .fc-mc-numero { border-color: var(--cor-sucesso); background: var(--cor-sucesso); color: var(--cor-fundo); }
+.fc-mc-correta .fc-mc-marca { color: var(--cor-sucesso); }
+.fc-mc-errada, .fc-mc-errada:disabled:hover {
+  border-color: var(--cor-erro); box-shadow: inset 4px 0 0 var(--cor-erro);
+}
+.fc-mc-errada .fc-mc-numero { border-color: var(--cor-erro); background: var(--cor-erro); color: var(--cor-fundo); }
+.fc-mc-errada .fc-mc-marca { color: var(--cor-erro); }
+
+.fc-mc-resultado:empty { display: none; }
+.fc-mc-resultado {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 12px; border-radius: var(--raio);
+  border: 1px solid var(--cor-borda); background: var(--cor-superficie-2);
+  overflow-wrap: anywhere;
+}
+.fc-mc-resultado p { margin: 0; white-space: pre-wrap; }
+.fc-mc-resultado-acerto { border-color: var(--cor-sucesso); }
+.fc-mc-resultado-erro { border-color: var(--cor-erro); }
+.fc-mc-veredito { font-weight: 700; }
+.fc-mc-resultado-acerto .fc-mc-veredito { color: var(--cor-sucesso); }
+.fc-mc-resultado-erro .fc-mc-veredito { color: var(--cor-erro); }
+
+.fc-explicacao {
+  display: flex; flex-direction: column; gap: 4px;
+  padding-top: 8px; border-top: 1px dashed var(--cor-borda);
+}
+.fc-explicacao p { margin: 0; color: var(--cor-texto-suave); white-space: pre-wrap; overflow-wrap: anywhere; }
+
+.fc-historico-modo {
+  font-size: 0.75rem; font-weight: 700; padding: 1px 8px; border-radius: 999px;
+  border: 1px solid var(--cor-borda); color: var(--cor-texto-suave);
+}
+
 /* ---------- Gerenciar ---------- */
 .fc-form { display: flex; flex-direction: column; gap: 12px; }
 .fc-form-linha { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -168,6 +224,35 @@
   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
 }
 
+/* Alternativas no formulário */
+.fc-alt {
+  border: 1px solid var(--cor-borda); border-radius: var(--raio);
+  padding: 10px 12px; background: var(--cor-superficie-2);
+}
+.fc-alt > summary { cursor: pointer; font-weight: 600; }
+.fc-alt[open] > summary { margin-bottom: 8px; }
+.fc-alt .fc-dica { margin-bottom: 10px; }
+.fc-alt-lista { list-style: none; margin: 0 0 10px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.fc-alt-linha {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px; border-radius: calc(var(--raio) - 2px); border: 1px solid transparent;
+}
+.fc-alt-linha-correta { border-color: var(--cor-sucesso); }
+.fc-alt-correta {
+  display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto;
+  font-size: 0.85rem; color: var(--cor-texto-suave); cursor: pointer;
+}
+.fc-alt-correta input { width: 18px; height: 18px; margin: 0; accent-color: var(--cor-sucesso); }
+.fc-alt-texto { flex: 1 1 auto; min-width: 0; }
+.fc-alt-remover { flex: 0 0 auto; }
+
+.fc-item-extras { display: flex; flex-wrap: wrap; gap: 6px; }
+.fc-selo {
+  font-size: 0.75rem; font-weight: 600; padding: 2px 8px; border-radius: 999px;
+  border: 1px solid var(--cor-borda); color: var(--cor-texto-suave);
+}
+.fc-selo-alt { border-color: var(--cor-destaque); color: var(--cor-destaque); }
+
 /* ---------- Estado vazio ---------- */
 .fc-vazio { text-align: center; padding: calc(var(--espaco) * 2) var(--espaco); }
 .fc-vazio p { color: var(--cor-texto-suave); max-width: 46ch; margin: 0 auto var(--espaco); }
@@ -184,4 +269,9 @@
   .fc-face-texto { font-size: 1.05rem; }
   .fc-filtro { flex-basis: 100%; }
   .fc-quiz-inicio .fc-filtro { max-width: none; }
+  .fc-mc-opcao { flex-wrap: wrap; }
+  .fc-mc-marca { flex-basis: 100%; padding-left: calc(1.6em + 10px); white-space: normal; }
+  .fc-alt-linha { flex-wrap: wrap; }
+  .fc-alt-texto { flex-basis: 100%; order: 3; }
+  .fc-alt-remover { margin-left: auto; }
 }
